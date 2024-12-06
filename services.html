@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - Plink</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="nav-brand">Plink</a>
+        <div class="nav-brand">Plink</div>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -17,84 +18,103 @@
         </div>
     </nav>
 
-    <main>
-        <section class="hero-small">
+    <main class="services-page">
+        <section class="hero-small animate__animated animate__fadeIn">
             <h1>Our Services</h1>
             <p>Comprehensive solutions for modern commerce</p>
         </section>
 
-        <section class="services">
-            <div class="container">
-                <h2>Core Services</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <h3>Transaction Data Pipeline</h3>
-                        <p>Our advanced pipeline processes raw payment data in real-time, delivering actionable insights instantly.</p>
-                        <ul class="feature-list">
-                            <li>Real-time processing</li>
-                            <li>AI-powered analysis</li>
-                            <li>Customizable alerts</li>
-                            <li>Trend detection</li>
-                        </ul>
+        <div class="services-grid-container">
+            <div class="service-card-large animate__animated animate__fadeInLeft">
+                <div class="service-icon">🔄</div>
+                <h3>Transaction Data Pipeline</h3>
+                <p>Our advanced pipeline processes raw payment data in real-time, delivering actionable insights instantly.</p>
+                <ul class="service-features">
+                    <li>Real-time processing</li>
+                    <li>AI-powered analysis</li>
+                    <li>Customizable alerts</li>
+                    <li>Trend detection</li>
+                </ul>
+                <div class="service-metrics">
+                    <div class="metric">
+                        <span class="metric-value">99.9%</span>
+                        <span class="metric-label">Uptime</span>
                     </div>
-
-                    <div class="service-card">
-                        <h3>Personal Selling Solution</h3>
-                        <p>Transform your point of sale into a powerful personalization engine.</p>
-                        <ul class="feature-list">
-                            <li>Customer behavior analysis</li>
-                            <li>Personalized recommendations</li>
-                            <li>Dynamic pricing</li>
-                            <li>Loyalty integration</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>Commerce Platform</h3>
-                        <p>Seamlessly integrate with your existing systems.</p>
-                        <ul class="feature-list">
-                            <li>No hardware changes needed</li>
-                            <li>Quick deployment</li>
-                            <li>API-first architecture</li>
-                            <li>Custom workflows</li>
-                        </ul>
+                    <div class="metric">
+                        <span class="metric-value">&lt;50ms</span>
+                        <span class="metric-label">Latency</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="integration">
-            <div class="container">
-                <h2>Integration Process</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <h3>1. Initial Setup</h3>
-                        <p>Quick integration with your existing POS system</p>
+            <div class="service-card-large animate__animated animate__fadeInRight">
+                <div class="service-icon">🎯</div>
+                <h3>Personal Selling Solution</h3>
+                <p>Transform your point of sale into a powerful personalization engine.</p>
+                <ul class="service-features">
+                    <li>Customer behavior analysis</li>
+                    <li>Personalized recommendations</li>
+                    <li>Dynamic pricing</li>
+                    <li>Loyalty integration</li>
+                </ul>
+                <div class="service-metrics">
+                    <div class="metric">
+                        <span class="metric-value">30%</span>
+                        <span class="metric-label">Avg. Revenue Increase</span>
                     </div>
-                    <div class="service-card">
-                        <h3>2. Configuration</h3>
-                        <p>Customize data collection and analysis parameters</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>3. Testing</h3>
-                        <p>Verify functionality in your environment</p>
-                    </div>
-                    <div class="service-card">
-                        <h3>4. Launch</h3>
-                        <p>Go live and start seeing results immediately</p>
+                    <div class="metric">
+                        <span class="metric-value">2x</span>
+                        <span class="metric-label">Customer Retention</span>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Ready to Get Started?</h2>
-                <p>Transform your business with Plink's powerful transaction intelligence platform.</p>
-                <a href="contact.html" class="cta-button">Contact Us</a>
+            <div class="service-card-large animate__animated animate__fadeInLeft">
+                <div class="service-icon">⚡</div>
+                <h3>Commerce Platform Integration</h3>
+                <p>Seamlessly integrate with your existing systems for enhanced capabilities.</p>
+                <ul class="service-features">
+                    <li>No hardware changes needed</li>
+                    <li>Quick deployment</li>
+                    <li>API-first architecture</li>
+                    <li>Custom workflows</li>
+                </ul>
+                <div class="service-metrics">
+                    <div class="metric">
+                        <span class="metric-value">1-Day</span>
+                        <span class="metric-label">Setup Time</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">100+</span>
+                        <span class="metric-label">Integrations</span>
+                    </div>
+                </div>
             </div>
-            <div class="hero-image">
-                <div class="placeholder-image">Platform Interface Preview</div>
+        </div>
+
+        <section class="integration-showcase">
+            <h2>Integration Process</h2>
+            <div class="process-timeline">
+                <div class="process-step animate__animated animate__fadeIn">
+                    <div class="step-number">1</div>
+                    <h4>Initial Setup</h4>
+                    <p>Quick integration with your existing POS system</p>
+                </div>
+                <div class="process-step animate__animated animate__fadeIn">
+                    <div class="step-number">2</div>
+                    <h4>Data Configuration</h4>
+                    <p>Customize data collection and analysis parameters</p>
+                </div>
+                <div class="process-step animate__animated animate__fadeIn">
+                    <div class="step-number">3</div>
+                    <h4>Testing</h4>
+                    <p>Verify functionality in your environment</p>
+                </div>
+                <div class="process-step animate__animated animate__fadeIn">
+                    <div class="step-number">4</div>
+                    <h4>Go Live</h4>
+                    <p>Launch and start seeing results immediately</p>
+                </div>
             </div>
         </section>
     </main>
@@ -106,15 +126,10 @@
                 <p>Making every transaction count</p>
             </div>
             <div class="footer-section">
-                <h4>Solutions</h4>
+                <h4>Quick Links</h4>
                 <a href="about.html">About Us</a>
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <p>info@plink.ai</p>
-                <p>San Francisco, CA</p>
             </div>
         </div>
         <div class="footer-bottom">
