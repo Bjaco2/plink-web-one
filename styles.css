@@ -1,155 +1,103 @@
-/* Previous styles remain unchanged... */
-
-/* Contact Page Styles */
-.contact-page .hero-small {
-    background: var(--gradient);
-    position: relative;
-    overflow: hidden;
+/* Base styles */
+:root {
+    --primary-color: #334bc1;
+    --secondary-color: #30ccd5;
+    --text-color: #333;
+    --background-color: #fff;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.1);
+    --glass-dark-bg: rgba(51, 75, 193, 0.1);
 }
 
-.contact-page .hero-small::before {
-    content: '';
-    position: absolute;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(45deg, #f6f8ff, #f0f8ff);
+    min-height: 100vh;
+}
+
+/* Navigation */
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(51, 75, 193, 0.3), rgba(48, 204, 213, 0.3));
-    z-index: 1;
+    z-index: 1000;
+    height: 70px;
 }
 
+/* Common Hero Section */
+.hero-small {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Faster Animations */
+.animate__animated {
+    animation-duration: 0.5s !important;
+}
+
+.animate__fadeIn {
+    animation-duration: 0.4s !important;
+}
+
+.animate__fadeInUp,
+.animate__fadeInLeft,
+.animate__fadeInRight {
+    animation-duration: 0.3s !important;
+}
+
+/* Services Page */
+.services-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* About Page */
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* Contact Page */
 .contact-grid {
     max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 2rem;
+    margin: 0 auto;
+    padding: 4rem 2rem;
 }
 
-.contact-form-container {
-    padding: 2rem;
-    border-radius: 16px;
-}
-
-.contact-form-container h2 {
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
-    position: relative;
-}
-
-.contact-form-container h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background: var(--gradient);
-    border-radius: 2px;
-}
-
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-.glass-input {
+/* Main Content Sections */
+main {
     width: 100%;
-    padding: 0.8rem 1rem;
-    border: 1px solid var(--glass-border);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    color: var(--text-color);
-    transition: all 0.3s ease;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-.glass-input:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(48, 204, 213, 0.1);
-}
-
-textarea.glass-input {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.contact-info-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    align-content: start;
-}
-
-.benefit-card {
-    padding: 1.5rem;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-.benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px 0 var(--glass-shadow);
-}
-
-.card-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
-.benefit-card h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.feature-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0;
-}
-
-.feature-list li {
-    margin: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.feature-list li::before {
-    content: '\2022';
-    color: var(--secondary-color);
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-}
-
-/* Responsive Design for Contact Page */
-@media (max-width: 768px) {
-    .contact-grid {
-        grid-template-columns: 1fr;
-        padding: 0 1rem;
-    }
-
-    .contact-form-container,
-    .benefit-card {
-        padding: 1.5rem;
-    }
-
-    .contact-info-container {
-        gap: 1rem;
-    }
-
-    .glass-input {
-        font-size: 16px; /* Prevents zoom on mobile */
-    }
-}
+/* Rest of your existing styles... */
