@@ -1,4 +1,122 @@
-/* Previous styles remain unchanged */
+/* Base styles */
+:root {
+    --primary-color: #334bc1;
+    --secondary-color: #30ccd5;
+    --text-color: #333;
+    --background-color: #fff;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: rgba(0, 0, 0, 0.1);
+    --glass-dark-bg: rgba(51, 75, 193, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(45deg, #f6f8ff, #f0f8ff);
+    min-height: 100vh;
+}
+
+/* Glassmorphism Classes */
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+}
+
+.glass-dark {
+    background: var(--glass-dark-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+}
+
+/* Navigation */
+.navbar {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-brand {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.nav-brand:hover {
+    transform: scale(1.05);
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-button:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+    transform: translateX(0);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: rgba(48, 204, 213, 0.1);
+    transform: translateY(-2px);
+}
 
 /* Hero Section */
 .hero {
@@ -139,4 +257,112 @@
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    color: var(--primary-color);
+    margin-top: 4rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 3rem 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.footer-section p {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.footer-section a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .feature-grid,
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.5rem;
+    }
+}
+
+/* Animations */
+.animate__fadeIn {
+    animation-duration: 1s;
+}
+
+.animate__fadeInUp,
+.animate__fadeInLeft,
+.animate__fadeInRight {
+    animation-duration: 0.8s;
+}
+
+.animate__pulse {
+    animation-duration: 2s;
 }
