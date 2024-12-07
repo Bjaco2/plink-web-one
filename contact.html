@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Plink</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="nav-brand">Plink</a>
+    <nav class="navbar glass">
+        <div class="nav-brand">Plink</div>
+        <button class="mobile-menu-button" aria-label="Toggle navigation menu">☰</button>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -17,31 +19,33 @@
         </div>
     </nav>
 
-    <main>
+    <main class="contact-page">
         <section class="hero-small">
-            <h1>Get in Touch</h1>
-            <p>Let's discuss how Plink can transform your business</p>
+            <div class="hero-content glass animate__animated animate__fadeIn">
+                <h1>Get in Touch</h1>
+                <p>Let's discuss how Plink can transform your business</p>
+            </div>
         </section>
 
         <div class="contact-grid">
-            <div class="contact-form-container">
+            <div class="contact-form-container glass animate__animated animate__fadeInLeft">
                 <h2>Send us a Message</h2>
                 <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message! We\'ll get back to you soon.');">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required class="glass-input">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required class="glass-input">
                     </div>
                     <div class="form-group">
                         <label for="company">Company</label>
-                        <input type="text" id="company" name="company">
+                        <input type="text" id="company" name="company" class="glass-input">
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <select id="subject" name="subject">
+                        <select id="subject" name="subject" class="glass-input">
                             <option value="general">General Inquiry</option>
                             <option value="demo">Request Demo</option>
                             <option value="support">Technical Support</option>
@@ -50,26 +54,30 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" name="message" required class="glass-input"></textarea>
                     </div>
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
             </div>
 
             <div class="contact-info-container">
-                <div class="benefit-card">
+                <div class="benefit-card glass animate__animated animate__fadeInRight">
+                    <div class="card-icon">🏢</div>
                     <h3>Office Location</h3>
                     <p>San Francisco, CA</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card glass animate__animated animate__fadeInRight" style="animation-delay: 0.2s;">
+                    <div class="card-icon">⏰</div>
                     <h3>Business Hours</h3>
                     <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card glass animate__animated animate__fadeInRight" style="animation-delay: 0.4s;">
+                    <div class="card-icon">✉</div>
                     <h3>Contact Information</h3>
                     <p>info@plink.ai</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card glass animate__animated animate__fadeInRight" style="animation-delay: 0.6s;">
+                    <div class="card-icon">💡</div>
                     <h3>Why Work With Us?</h3>
                     <ul class="feature-list">
                         <li>Personalized Solution Design</li>
@@ -82,7 +90,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="glass-dark">
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Plink</h4>
@@ -104,5 +112,7 @@
             <p>&copy; 2024 Plink. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
