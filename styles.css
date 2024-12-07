@@ -1,4 +1,4 @@
-/* Modern CSS with specified colors */
+/* Base styles */
 :root {
     --primary-color: #334bc1;
     --secondary-color: #30ccd5;
@@ -38,18 +38,13 @@ body {
     color: white;
     font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    gap: 1rem;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
     border-radius: 4px;
     transition: all 0.3s ease;
 }
@@ -58,36 +53,4 @@ body {
 .nav-links a.active {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
-}
-
-/* Hero Sections */
-.hero, .hero-small {
-    background: var(--gradient);
-    color: white;
-    text-align: center;
-    padding: 8rem 2rem 4rem;
-    margin-top: 60px;
-}
-
-.hero-small {
-    padding: 6rem 2rem 3rem;
-}
-
-.hero h1, .hero-small h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.hero p, .hero-small p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-}
-
-/* About Page Specific */
-.about-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
 }
