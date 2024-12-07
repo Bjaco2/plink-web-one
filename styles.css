@@ -1,13 +1,13 @@
 /* Previous styles remain unchanged... */
 
-/* Services Page Styles */
-.services-page .hero-small {
+/* Contact Page Styles */
+.contact-page .hero-small {
     background: var(--gradient);
     position: relative;
     overflow: hidden;
 }
 
-.services-page .hero-small::before {
+.contact-page .hero-small::before {
     content: '';
     position: absolute;
     top: 0;
@@ -18,48 +18,114 @@
     z-index: 1;
 }
 
-.services-grid-container {
+.contact-grid {
     max-width: 1200px;
     margin: 4rem auto;
     padding: 0 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 3fr 2fr;
     gap: 2rem;
 }
 
-.service-card-large {
+.contact-form-container {
     padding: 2rem;
     border-radius: 16px;
-    transition: all 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
-.service-card-large:hover {
+.contact-form-container h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.contact-form-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.glass-input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(48, 204, 213, 0.1);
+}
+
+textarea.glass-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-info-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-content: start;
+}
+
+.benefit-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 40px 0 var(--glass-shadow);
 }
 
-.service-icon {
-    font-size: 2.5rem;
+.card-icon {
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
-.service-features {
-    list-style: none;
-    margin: 1.5rem 0;
-    padding: 0;
+.benefit-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
-.service-features li {
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.feature-list li {
     margin: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
 }
 
-.service-features li::before {
+.feature-list li::before {
     content: '\2022';
     color: var(--secondary-color);
     font-weight: bold;
@@ -67,116 +133,23 @@
     left: 0;
 }
 
-.service-metrics {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: auto;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--glass-border);
-}
-
-.metric {
-    text-align: center;
-}
-
-.metric-value {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.metric-label {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-/* Integration Process */
-.integration-showcase {
-    padding: 4rem 2rem;
-    text-align: center;
-}
-
-.integration-showcase h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.integration-showcase h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50px;
-    height: 3px;
-    background: var(--gradient);
-    border-radius: 2px;
-}
-
-.process-timeline {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.process-step {
-    padding: 2rem;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.process-step:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 40px 0 var(--glass-shadow);
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: var(--gradient);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    margin: 0 auto 1rem;
-}
-
-.process-step h4 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-/* Responsive Design for Services Page */
+/* Responsive Design for Contact Page */
 @media (max-width: 768px) {
-    .services-grid-container {
+    .contact-grid {
         grid-template-columns: 1fr;
         padding: 0 1rem;
     }
 
-    .service-card-large {
+    .contact-form-container,
+    .benefit-card {
         padding: 1.5rem;
     }
 
-    .process-timeline {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .contact-info-container {
+        gap: 1rem;
     }
 
-    .service-metrics {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .integration-showcase {
-        padding: 3rem 1rem;
+    .glass-input {
+        font-size: 16px; /* Prevents zoom on mobile */
     }
 }
